@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <title>rust wasm</title>
+</head>
+<body>
+
+<h2>minimal rust and wasm demo</h2>
+
+<div id="result"></div>
+
+<script>
+
+  const wasm_file = "target/wasm32-unknown-unknown/debug/begin_wasm.wasm";
+
+  // way-1
+  WebAssembly.instantiateStreaming(fetch(wasm_file))
+    .then(mod => {
+      const result = mod.instance.exports.add_one(1);
+      const text = document.createTextNode(result);
+      document.getElementById('result').appendChild(text);
+    });
+
+  // way-2
+  // fetch(wasm_file)
+  //   .then(res => res.arrayBuffer())
+  //   .then(buff => WebAssembly.instantiate(buff))
+  //   .then(inst => {
+  //     const add_one = inst.instance.exports.add_one
+  //
+  //     const result = add_one(1)
+  //
+  //     document.getElementById('result').innerHTML = result
+  //   })
+
+</script>
+
+</body>
+<html>

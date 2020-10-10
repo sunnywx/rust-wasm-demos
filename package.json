@@ -1,0 +1,23 @@
+{
+  "name": "rust-wasm-demos",
+  "version": "0.1.0",
+  "description": "Learning rust and wasm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "webpack",
+    "build:wasm": "wasm-pack build --dev",
+    "build": "npm run build:wasm && npm run build:js",
+    "start": "npm run build && http -p 3001 public"
+  },
+  "keywords": [
+    "rust",
+    "wasm"
+  ],
+  "author": "sunnyw <iwisunny@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}

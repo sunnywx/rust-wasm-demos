@@ -1,0 +1,10 @@
+/target
+Cargo.lock
+
+.idea/
+
+public/dist/
+
+node_modules/
+
+/**/*.wasm

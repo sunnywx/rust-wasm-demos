@@ -1,4 +1,4 @@
-# Chapters with Rust examples
+# Rust examples
 
 ## 1. Usage
 

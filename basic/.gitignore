@@ -1,0 +1,11 @@
+*
+# *.o
+# *.out
+# *.wasm
+
+!.gitignore
+!*.c
+!*.js
+!*.mjs
+!*.wat
+
